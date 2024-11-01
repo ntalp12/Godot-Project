@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqkyotula1n3g"]
+
+[ext_resource type="Script" path="res://addons/sprite_cutter/AtlasScene.gd" id="1_eh6eh"]
+[ext_resource type="Texture2D" uid="uid://crseofh168hoc" path="res://GUI.png" id="2_4fc2k"]
+[ext_resource type="Texture2D" uid="uid://darvv6jefjgf5" path="res://PlayerPNG/p2green.png" id="3_2j6hr"]
+[ext_resource type="Texture2D" uid="uid://b7pfn6oac7qcs" path="res://tileset_city_free.png" id="4_8gbwu"]
+[ext_resource type="Texture2D" uid="uid://ck2xs3l2xdusx" path="res://Tileset&Items.png" id="5_o2hal"]
+
+[node name="AtlasScene" type="Node"]
+script = ExtResource("1_eh6eh")
+
+[node name="Gui" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(96, 72)
+texture = ExtResource("2_4fc2k")
+region_enabled = true
+region_rect = Rect2(116, 68, 8, 6)
+
+[node name="Character20x20Pink" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-24, 8)
+texture = ExtResource("3_2j6hr")
+region_enabled = true
+region_rect = Rect2(42, 24, 15, 14)
+
+[node name="TilesetCityFree" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(136, 16)
+texture = ExtResource("4_8gbwu")
+region_enabled = true
+region_rect = Rect2(112, 256, 16, 16)
+
+[node name="Tileset&items" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(200, 8)
+texture = ExtResource("5_o2hal")
+region_enabled = true
+region_rect = Rect2(114, 51, 11, 11)

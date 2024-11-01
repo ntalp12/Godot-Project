@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5dxfrd4gqp8y"]
+
+[ext_resource type="Texture2D" uid="uid://b7pfn6oac7qcs" path="res://tileset_city_free.png" id="1_0g2q4"]
+[ext_resource type="Script" path="res://Collecting/fire.gd" id="1_xkh0w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq4i7"]
+atlas = ExtResource("1_0g2q4")
+region = Rect2(96, 216, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6x44"]
+atlas = ExtResource("1_0g2q4")
+region = Rect2(128, 216, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2bhb"]
+atlas = ExtResource("1_0g2q4")
+region = Rect2(112, 216, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tr1gk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq4i7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6x44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2bhb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gj3m"]
+size = Vector2(40, 32)
+
+[node name="Fire" type="Area2D"]
+script = ExtResource("1_xkh0w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -12.7216)
+scale = Vector2(2.5, 2.43987)
+sprite_frames = SubResource("SpriteFrames_tr1gk")
+autoplay = "default"
+frame = 1
+frame_progress = 0.386558
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.278442)
+shape = SubResource("RectangleShape2D_4gj3m")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

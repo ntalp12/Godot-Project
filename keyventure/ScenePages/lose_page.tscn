@@ -1,0 +1,170 @@
+[gd_scene load_steps=10 format=4 uid="uid://vjdovtir4no1"]
+
+[ext_resource type="Script" path="res://ScenePages/lose_page.gd" id="1_o3j5j"]
+[ext_resource type="Texture2D" uid="uid://ddk1v1ii30s7k" path="res://background.png" id="2_u21dg"]
+[ext_resource type="Texture2D" uid="uid://b7pfn6oac7qcs" path="res://tileset_city_free.png" id="3_wjbpm"]
+[ext_resource type="Texture2D" uid="uid://dd3dqgdak2awc" path="res://PlayerPNG/p1pink.png" id="4_tdvuh"]
+[ext_resource type="Texture2D" uid="uid://darvv6jefjgf5" path="res://PlayerPNG/p2green.png" id="5_dp46g"]
+[ext_resource type="Texture2D" uid="uid://b73bxu1bskw6h" path="res://Textinpng/text_restart.png" id="6_l8g6r"]
+[ext_resource type="Texture2D" uid="uid://cmgye0xv4bcsb" path="res://Textinpng/text_gameover.png" id="7_hrx1o"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eq1nt"]
+texture = ExtResource("3_wjbpm")
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+5:4/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+12:9/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+12:10/0 = 0
+14:10/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+13:12/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+13:13/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+13:14/0 = 0
+3:16/0 = 0
+5:16/0 = 0
+7:16/0 = 0
+9:16/0 = 0
+11:16/0 = 0
+13:16/0 = 0
+10:18/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+5:19/0 = 0
+6:19/0 = 0
+7:19/0 = 0
+8:19/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7nhgt"]
+sources/0 = SubResource("TileSetAtlasSource_eq1nt")
+
+[node name="gameover" type="Node2D"]
+script = ExtResource("1_o3j5j")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u21dg")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(4.5, 4.5)
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAMAAAABAAAAAAADAAMAAAACAAAAAAAKAAIAADADAAAAAAAJAAIAADAEAAAAAAAIAAIAADAFAAAAAAADAAMAAAAHAAAAAAADAAMAAAAIAAAAAAADAAMAAAAJAAAAAAADAAMAAAAKAAAAAAADAAMAAAALAAAAAAADAAMAAAAMAAAAAAADAAMAAAANAAAAAAADAAMAAAAOAAAAAAADAAMAAAAAAAEAAAADAAMAAAAAAAIAAAADAAMAAAAAAAMAAAADAAMAAAAAAAQAAAADAAMAAAAAAAYAAAADAAMAAAAAAAcAAAADAAMAAAAAAAgAAAAGAAEAAAABAAgAAAADAAMAAAACAAgAAAADAAMAAAADAAgAAAADAAMAAAAEAAgAAAADAAMAAAAFAAgAAAADAAMAAAAGAAgAAAADAAMAAAAHAAgAAAADAAMAAAAIAAgAAAADAAMAAAAKAAgAAAADAAMAAAALAAgAAAAMAAMAAAAMAAgAAAANAAIAAAANAAgAAAAOAAMAAAAOAAgAAAADAAMAAAAPAAgAAAADAAMAAAAPAAAAAAADAAMAAAAPAAEAAAADAAMAAAAPAAIAAAAGAAIAAAAPAAMAAAADAAMAAAAPAAQAAAADAAMAAAAPAAUAAAADAAMAAAAPAAYAAAAGAAIAAAAPAAcAAAADAAMAAAALAAcAAAAMAAEAAAAMAAcAAAANAAEAAAANAAcAAAAOAAEAAAAHAAcAAAALABAAAAAEAAMAAAAHAA4AAAAFAAMAAAAIAA4AAAAEAAEAAAAIAAEAADADAAEAAAAJAAEAADACAAEAAAAKAAEAADAJAAgAAAAGAAEAAAAGAAAAAAAGAAEAAAAAAAUAAAAGAAIAAAALAAEAAAAHAA4AAAAMAAEAAAAIAA4AAAA=")
+tile_set = SubResource("TileSet_7nhgt")
+
+[node name="p1char" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(336, 424)
+scale = Vector2(21.4643, 21.4643)
+texture = ExtResource("4_tdvuh")
+region_enabled = true
+region_rect = Rect2(42, 24, 15, 14)
+
+[node name="p2char" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(856, 280)
+scale = Vector2(21.5905, 21.5905)
+texture = ExtResource("5_dp46g")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(42, 24, 15, 14)
+
+[node name="Restart" type="Button" parent="."]
+texture_filter = 1
+offset_left = 592.0
+offset_top = 328.0
+offset_right = 893.0
+offset_bottom = 432.0
+icon = ExtResource("6_l8g6r")
+icon_alignment = 1
+expand_icon = true
+
+[node name="GameOver" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(600, 224)
+scale = Vector2(1.75088, 1.72173)
+texture = ExtResource("7_hrx1o")
+region_enabled = true
+region_rect = Rect2(17, 0, 489, 105)
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

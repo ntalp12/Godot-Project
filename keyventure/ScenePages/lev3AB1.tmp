@@ -1,0 +1,390 @@
+[gd_scene load_steps=17 format=4 uid="uid://dh4s81fr6wu7a"]
+
+[ext_resource type="Script" path="res://SceneObjects/game_manager.gd" id="1_4q45n"]
+[ext_resource type="Texture2D" uid="uid://ddk1v1ii30s7k" path="res://PixelBG/background_tileset_city_free.png" id="2_1agao"]
+[ext_resource type="Texture2D" uid="uid://b7pfn6oac7qcs" path="res://PixelBG/tileset_city_free.png" id="3_b2nt8"]
+[ext_resource type="PackedScene" uid="uid://dwwdculg7vspj" path="res://SceneObjects/p1pink.tscn" id="4_eecjo"]
+[ext_resource type="PackedScene" uid="uid://b1lfcpgfxhr05" path="res://SceneObjects/p2green.tscn" id="5_h2mk1"]
+[ext_resource type="PackedScene" uid="uid://bpnnpjl8mvd0a" path="res://Collecting/animate_key.tscn" id="6_bxt1f"]
+[ext_resource type="PackedScene" uid="uid://dak7wd5nmxiu7" path="res://Collecting/animate_health.tscn" id="7_f6j7d"]
+[ext_resource type="PackedScene" uid="uid://b5dxfrd4gqp8y" path="res://Collecting/animate_fire.tscn" id="8_vje68"]
+[ext_resource type="PackedScene" uid="uid://b2q14sgexv8y3" path="res://Collecting/animate_thorn.tscn" id="9_8juki"]
+[ext_resource type="Script" path="res://ScenePages/p_1_canvas.gd" id="11_adrts"]
+[ext_resource type="Texture2D" uid="uid://crseofh168hoc" path="res://GUI.png" id="11_hd838"]
+[ext_resource type="Texture2D" uid="uid://dd3dqgdak2awc" path="res://PlayerPNG/p1pink.png" id="12_7u51e"]
+[ext_resource type="Texture2D" uid="uid://ck2xs3l2xdusx" path="res://Robot Platform Pack/Tileset&Items.png" id="13_6bueq"]
+[ext_resource type="Texture2D" uid="uid://darvv6jefjgf5" path="res://PlayerPNG/p2green.png" id="13_hif2v"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nm80t"]
+texture = ExtResource("3_b2nt8")
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.14905, -8, -1.14905)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.14905, -8, -1.14905)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.14905, -8, -1.14905)
+12:1/0 = 0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.14905, -8, -1.14905)
+13:1/0 = 0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.14905, -8, -1.14905)
+14:1/0 = 0
+14:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.14905, -8, -1.14905)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.14905, -8, -1.14905)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.14905, -8, -1.14905)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.14905, -8, -1.14905)
+5:5/0 = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+8:9/0 = 0
+8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.06066, 0.0883884, -0.883883, -8, 8, -8, 8, 8, -8, 8, -8, 0.0883884)
+9:9/0 = 0
+9:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:9/0 = 0
+10:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.06066, 0.0883884, 0.883883, -8, -8, -8, -8, 8, 8, 8, 8, 0.0883884)
+12:9/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+12:10/0 = 0
+14:10/0 = 0
+14:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.06066, 0.0883884, 0.883883, -8, -8, -8, -8, 8, 8, 8, 8, 0.0883884)
+2:11/0 = 0
+3:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+13:12/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+13:13/0 = 0
+3:14/0 = 0
+3:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+13:14/0 = 0
+3:16/0 = 0
+3:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:16/0 = 0
+7:16/0 = 0
+9:16/0 = 0
+11:16/0 = 0
+13:16/0 = 0
+10:18/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+5:19/0 = 0
+6:19/0 = 0
+7:19/0 = 0
+8:19/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_n75e7"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_nm80t")
+
+[node name="Game" type="Node"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_4q45n")
+
+[node name="SceneObjects" type="Node" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="SceneObjects"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_1agao")
+
+[node name="TileMap" type="TileMap" parent="SceneObjects"]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+tile_set = SubResource("TileSet_n75e7")
+format = 2
+
+[node name="Layer1" type="TileMapLayer" parent="SceneObjects/TileMap"]
+texture_filter = 1
+use_parent_material = true
+tile_map_data = PackedByteArray("AAABAA0AAAADAAEAAAABAA4AAAADAAIAAAABAA8AAAADAAMAAAACAA0AAAADAAEAAAACAA4AAAADAAIAAAACAA8AAAADAAMAAAADAA0AAAADAAEAAAADAA4AAAADAAIAAAADAA8AAAADAAMAAAAEAA0AAAADAAEAAAAEAA4AAAADAAIAAAAEAA8AAAADAAMAAAAFAA0AAAADAAEAAAAFAA4AAAADAAIAAAAFAA8AAAADAAMAAAAGAA0AAAADAAEAAAAGAA4AAAADAAIAAAAGAA8AAAADAAMAAAAHAA0AAAADAAEAAAAHAA4AAAADAAIAAAAHAA8AAAADAAMAAAAIAA0AAAADAAEAAAAIAA4AAAADAAIAAAAIAA8AAAADAAMAAAAJAA0AAAADAAEAAAAJAA4AAAADAAIAAAAJAA8AAAADAAMAAAAKAA8AAAADAAIAAAALAA4AAAACAAEAAAALAA8AAAADAAMAAAAMAA4AAAADAAEAAAAMAA8AAAADAAMAAAANAA0AAAACAAEAAAANAA4AAAADAAIAAAANAA8AAAADAAMAAAAOAA0AAAADAAEAAAAOAA4AAAADAAIAAAAOAA8AAAADAAMAAAAPAA0AAAAEAAEAAAAPAA4AAAADAAIAAAAPAA8AAAADAAMAAAAQAA8AAAADAAMAAAARAA8AAAADAAMAAAASAA8AAAADAAMAAAATAA8AAAADAAMAAAAUAA8AAAADAAMAAAAVAA8AAAADAAMAAAAWAA8AAAADAAMAAAAXAA8AAAADAAMAAAAYAA0AAAADAAEAAAAYAA4AAAADAAIAAAAYAA8AAAADAAMAAAAaAA0AAAADAAEAAAAaAA4AAAADAAIAAAAaAA8AAAADAAMAAAAbAA0AAAADAAEAAAAbAA4AAAADAAIAAAAbAA8AAAADAAMAAAAZAA0AAAADAAEAAAAZAA4AAAADAAIAAAAZAA8AAAADAAMAAAAcAA0AAAAEAAEAAAAcAA4AAAAEAAIAAAAcAA8AAAAEAAMAAAAAAA0AAAACAAEAAAAAAA4AAAACAAIAAAAAAA8AAAACAAMAAAAcAAAAAAAJAAEAAAAcAAEAAAAKAAcAAAAcAAIAAAAIAAIAAAAcAAMAAAAIAAMAAAAcAAQAAAAIAAIAAAAcAAUAAAAKAAcAAAAcAAYAAAAIAAIAAAAcAAcAAAAIAAMAAAAcAAgAAAAIAAIAAAAcAAkAAAAIAAcAAAAcAAoAAAAIAAIAAAAcAAsAAAAIAAMAAAAcAAwAAAAIAAIAAAAAAAAAAAANAAEAAAAAAAEAAAAKAAcAAAAAAAIAAAAOAAMAAAAAAAMAAAAOAAIAAAAAAAQAAAAOAAMAAAAAAAUAAAAKAAcAAAAAAAYAAAAOAAMAAAAAAAcAAAAOAAIAAAAAAAgAAAAOAAMAAAAAAAkAAAAKAAcAAAAAAAoAAAAOAAMAAAAAAAsAAAAOAAIAAAAAAAwAAAAOAAMAAAACAAUAAAADAAUAAAADAAUAAAADAAUAAAAEAAUAAAAEAAUAAAAJAAUAAAADAAUAAAAKAAUAAAAEAAUAAAAYAAUAAAACAAUAAAAZAAUAAAADAAUAAAAaAAUAAAAEAAUAAAASAAUAAAADAAUAAAATAAUAAAADAAUAAAAGAAsAAAACAAIAAAAGAAwAAAACAAMAAAAHAAsAAAADAAIAAAAHAAwAAAADAAMAAAAIAAsAAAAEAAEAAAAIAAwAAAADAAIAAAAQAA4AAAADAAEAAAARAA4AAAAEAAEAAAAUAAsAAAACAAEAAAAUAAwAAAADAAIAAAAUAA0AAAADAAEAAAAUAA4AAAADAAIAAAAVAAsAAAADAAIAAAAVAAwAAAADAAMAAAAVAA0AAAADAAEAAAAVAA4AAAADAAIAAAAWAAsAAAAEAAIAAAAWAAwAAAAEAAMAAAAWAA0AAAADAAEAAAAWAA4AAAADAAIAAAATAAwAAAACAAEAAAATAA0AAAADAAEAAAATAA4AAAACAAIAAAAXAA0AAAADAAEAAAAXAA4AAAADAAIAAAAJAAwAAAAEAAEAAAAGAAoAAAACAAEAAAAHAAoAAAAEAAEAAAAVAAoAAAACAAEAAAAWAAoAAAAEAAEAAAAFAAwAAAADABAAAAAXAAwAAAADABAAAAANAAcAAAACAAUAAAAOAAcAAAADAAUAAAAPAAcAAAAEAAUAAAAFAAcAAAACAAUAAAAGAAcAAAAEAAUAAAAWAAcAAAACAAUAAAAXAAcAAAAEAAUAAAABAAAAAAAOAAEAAAAbAAAAAAAIAAEAAAD//wYAAAADAAMAAAD//wcAAAADAAMAAAD//wgAAAADAAMAAAD//wkAAAADAAMAAAD//woAAAADAAMAAAD//wsAAAADAAMAAAD//wwAAAADAAMAAAD//w0AAAADAAMAAAD//w4AAAADAAMAAAD//w8AAAADAAMAAAD//wEAAAADAAMAAAD//wIAAAADAAMAAAD//wMAAAADAAMAAAD//wQAAAADAAMAAAD//wUAAAADAAMAAAD//wAAAAADAAMAAAD/////AAADAAMAAAAAAP//AAADAAMAAAABAP//AAADAAMAAAACAP//AAADAAMAAAADAP//AAADAAMAAAAEAP//AAADAAMAAAAFAP//AAADAAMAAAAGAP//AAADAAMAAAAHAP//AAADAAMAAAAIAP//AAADAAMAAAAJAP//AAADAAMAAAAKAP//AAADAAMAAAALAP//AAADAAMAAAAMAP//AAADAAMAAAANAP//AAADAAMAAAAOAP//AAADAAMAAAAPAP//AAADAAMAAAAQAP//AAADAAMAAAARAP//AAADAAMAAAASAP//AAADAAMAAAATAP//AAADAAMAAAAUAP//AAADAAMAAAAVAP//AAADAAMAAAAWAP//AAADAAMAAAAXAP//AAADAAMAAAAYAP//AAADAAMAAAAZAP//AAADAAMAAAAaAP//AAADAAMAAAAbAP//AAADAAMAAAAcAP//AAADAAMAAAAdAP//AAADAAMAAAAdAAAAAAADAAMAAAAdAAEAAAADAAMAAAAdAAIAAAADAAMAAAAdAAMAAAADAAMAAAAdAAQAAAADAAMAAAAdAAUAAAADAAMAAAAdAAYAAAADAAMAAAAdAAcAAAADAAMAAAAdAAgAAAADAAMAAAAdAAkAAAADAAMAAAAdAAoAAAADAAMAAAAdAAsAAAADAAMAAAAdAAwAAAADAAMAAAAdAA0AAAADAAMAAAAdAA4AAAADAAMAAAAdAA8AAAADAAMAAAAMAA0AAAAOAAoAAAAQAA0AAAAOAAoAAAATAAgAAAADAAUAAAALAAkAAAAEAAUAAAARAAkAAAACAAUAAAANAAMAAAAIAAkAAAAOAAMAAAAJAAkAAAAPAAMAAAAKAAkAAAASAAkAAAAEAAUAAAAKAAkAAAACAAUAAAAJAAgAAAADAAUAAAAIAAUAAAADAAUAAAAUAAUAAAAEAAUAAAA=")
+tile_set = SubResource("TileSet_n75e7")
+
+[node name="Player" type="Node" parent="SceneObjects"]
+
+[node name="p1pink" parent="SceneObjects/Player" instance=ExtResource("4_eecjo")]
+position = Vector2(117, 478)
+bullet = null
+
+[node name="p2green" parent="SceneObjects/Player" instance=ExtResource("5_h2mk1")]
+position = Vector2(1064, 480)
+
+[node name="Element" type="Node" parent="SceneObjects"]
+
+[node name="Collecting" type="Node" parent="SceneObjects/Element"]
+
+[node name="Key" parent="SceneObjects/Element/Collecting" instance=ExtResource("6_bxt1f")]
+unique_name_in_owner = true
+position = Vector2(584, 464)
+hud = NodePath("../../../../HUD")
+
+[node name="Health" parent="SceneObjects/Element/Collecting" instance=ExtResource("7_f6j7d")]
+position = Vector2(68, 337)
+
+[node name="Health2" parent="SceneObjects/Element/Collecting" instance=ExtResource("7_f6j7d")]
+position = Vector2(459, 522)
+
+[node name="Health3" parent="SceneObjects/Element/Collecting" instance=ExtResource("7_f6j7d")]
+position = Vector2(707, 521)
+
+[node name="Health4" parent="SceneObjects/Element/Collecting" instance=ExtResource("7_f6j7d")]
+position = Vector2(1099, 337)
+
+[node name="Health5" parent="SceneObjects/Element/Collecting" instance=ExtResource("7_f6j7d")]
+position = Vector2(181, 167)
+
+[node name="Health6" parent="SceneObjects/Element/Collecting" instance=ExtResource("7_f6j7d")]
+position = Vector2(984, 170)
+
+[node name="Health7" parent="SceneObjects/Element/Collecting" instance=ExtResource("7_f6j7d")]
+position = Vector2(582, 243)
+
+[node name="Damage" type="Node" parent="SceneObjects/Element"]
+
+[node name="Fire" parent="SceneObjects/Element/Damage" instance=ExtResource("8_vje68")]
+position = Vector2(420, 583)
+
+[node name="Fire2" parent="SceneObjects/Element/Damage" instance=ExtResource("8_vje68")]
+position = Vector2(740, 583)
+
+[node name="Thorn" parent="SceneObjects/Element/Damage" instance=ExtResource("9_8juki")]
+position = Vector2(500, 541)
+
+[node name="Thorn2" parent="SceneObjects/Element/Damage" instance=ExtResource("9_8juki")]
+position = Vector2(660, 541)
+
+[node name="KeyOpenner" parent="SceneObjects/Element"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(580, 76)
+script = null
+
+[node name="HUD" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="p1canvas" type="CanvasLayer" parent="HUD"]
+script = ExtResource("11_adrts")
+
+[node name="Frame" type="Sprite2D" parent="HUD/p1canvas"]
+texture_filter = 1
+position = Vector2(55, 55)
+scale = Vector2(1.77273, 1.77273)
+texture = ExtResource("11_hd838")
+region_enabled = true
+region_rect = Rect2(2, 34, 44, 44)
+
+[node name="p1char" type="Sprite2D" parent="HUD/p1canvas"]
+texture_filter = 1
+position = Vector2(55, 55)
+scale = Vector2(3.92857, 3.92857)
+texture = ExtResource("12_7u51e")
+region_enabled = true
+region_rect = Rect2(42, 24, 15, 14)
+
+[node name="healthcanvas" type="Sprite2D" parent="HUD/p1canvas"]
+texture_filter = 1
+position = Vector2(154.929, 38.5)
+scale = Vector2(2.21429, 2.21429)
+texture = ExtResource("11_hd838")
+region_enabled = true
+region_rect = Rect2(145, 81, 46, 14)
+
+[node name="health1" type="Sprite2D" parent="HUD/p1canvas/healthcanvas"]
+texture_filter = 1
+position = Vector2(-15.3227, -0.67742)
+scale = Vector2(0.828445, 0.742668)
+texture = ExtResource("13_6bueq")
+region_enabled = true
+region_rect = Rect2(114, 51, 11, 11)
+
+[node name="health2" type="Sprite2D" parent="HUD/p1canvas/healthcanvas"]
+texture_filter = 1
+position = Vector2(-5.38728, -0.67742)
+scale = Vector2(0.828445, 0.742668)
+texture = ExtResource("13_6bueq")
+region_enabled = true
+region_rect = Rect2(114, 51, 11, 11)
+
+[node name="health3" type="Sprite2D" parent="HUD/p1canvas/healthcanvas"]
+texture_filter = 1
+position = Vector2(5.04013, -0.677421)
+scale = Vector2(0.828445, 0.742668)
+texture = ExtResource("13_6bueq")
+region_enabled = true
+region_rect = Rect2(114, 51, 11, 11)
+
+[node name="health4" type="Sprite2D" parent="HUD/p1canvas/healthcanvas"]
+texture_filter = 1
+position = Vector2(15.4272, -0.677421)
+scale = Vector2(0.828445, 0.742668)
+texture = ExtResource("13_6bueq")
+region_enabled = true
+region_rect = Rect2(114, 51, 11, 11)
+
+[node name="keycanvas" type="Sprite2D" parent="HUD/p1canvas"]
+texture_filter = 1
+position = Vector2(119, 74)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("11_hd838")
+region_enabled = true
+region_rect = Rect2(0, 81, 16, 15)
+
+[node name="Key1" type="Sprite2D" parent="HUD/p1canvas/keycanvas"]
+texture_filter = 1
+position = Vector2(0.470587, -1.41177)
+scale = Vector2(0.876471, 0.876471)
+texture = ExtResource("13_6bueq")
+region_enabled = true
+region_rect = Rect2(2, 132, 11, 10)
+
+[node name="keycanvas2" type="Sprite2D" parent="HUD/p1canvas"]
+texture_filter = 1
+position = Vector2(155, 74)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("11_hd838")
+region_enabled = true
+region_rect = Rect2(0, 81, 16, 15)
+
+[node name="keycanvas3" type="Sprite2D" parent="HUD/p1canvas"]
+texture_filter = 1
+position = Vector2(192, 74)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("11_hd838")
+region_enabled = true
+region_rect = Rect2(0, 81, 16, 15)
+
+[node name="p2canvas" type="CanvasLayer" parent="HUD"]
+
+[node name="Frame" type="Sprite2D" parent="HUD/p2canvas"]
+texture_filter = 1
+position = Vector2(1103, 55)
+scale = Vector2(1.77273, 1.77273)
+texture = ExtResource("11_hd838")
+region_enabled = true
+region_rect = Rect2(2, 34, 44, 44)
+
+[node name="p2char" type="Sprite2D" parent="HUD/p2canvas"]
+texture_filter = 1
+position = Vector2(1103, 55)
+scale = Vector2(3.92857, 3.92857)
+texture = ExtResource("13_hif2v")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(42, 24, 15, 14)
+
+[node name="healthcanvas" type="Sprite2D" parent="HUD/p2canvas"]
+texture_filter = 1
+position = Vector2(1003.93, 38.5)
+scale = Vector2(2.21429, 2.21429)
+texture = ExtResource("11_hd838")
+region_enabled = true
+region_rect = Rect2(145, 81, 46, 14)
+
+[node name="keycanvas" type="Sprite2D" parent="HUD/p2canvas"]
+texture_filter = 1
+position = Vector2(1040, 74)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("11_hd838")
+region_enabled = true
+region_rect = Rect2(0, 81, 16, 15)
+
+[node name="keycanvas2" type="Sprite2D" parent="HUD/p2canvas"]
+texture_filter = 1
+position = Vector2(968, 74)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("11_hd838")
+region_enabled = true
+region_rect = Rect2(0, 81, 16, 15)
+
+[node name="keycanvas3" type="Sprite2D" parent="HUD/p2canvas"]
+texture_filter = 1
+position = Vector2(1005, 74)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("11_hd838")
+region_enabled = true
+region_rect = Rect2(0, 81, 16, 15)

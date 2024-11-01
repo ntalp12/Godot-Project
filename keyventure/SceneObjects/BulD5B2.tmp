@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://6cxxvvmrjlsf"]
+
+[ext_resource type="Script" path="res://SceneObjects/bullet.gd" id="1_kcsow"]
+[ext_resource type="Texture2D" uid="uid://xus4wrg4p13i" path="res://Robot Platform Pack/EnemyRobot/EnemyRobot_Bullet.png" id="2_3yosq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oj2n"]
+atlas = ExtResource("2_3yosq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlble"]
+atlas = ExtResource("2_3yosq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd47e"]
+atlas = ExtResource("2_3yosq")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tqw61"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oj2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlble")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd47e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p82p5"]
+radius = 2.23607
+
+[node name="Node2D" type="CharacterBody2D"]
+position = Vector2(-24, 0)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_kcsow")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(0.78125, 0.78125)
+sprite_frames = SubResource("SpriteFrames_tqw61")
+frame_progress = 0.845435
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_p82p5")
